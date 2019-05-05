@@ -3,15 +3,17 @@ export const initialState = {
   lastName: "Muskett",
   age: 33,
   location: "London",
-  counter: 0
+  counter: ""
 };
+
+export const favouriteFood = {};
 
 export function reducer(state, action) {
   switch (action.type) {
     case "increment":
-      return { ...state, counter: state.counter + 1 };
+      return { ...state, counter: action.payload };
     case "decrement":
-      return { ...state, counter: state.counter - 1 };
+      return { ...state, counter: action.payload };
     default:
       return { ...state };
   }
